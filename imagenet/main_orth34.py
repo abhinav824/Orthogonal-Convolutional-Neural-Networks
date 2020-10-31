@@ -232,12 +232,13 @@ def main_worker(gpu, ngpus_per_node, args):
                         shuffle=(train_sampler is None),
                         num_workers=args.workers,
                         pin_memory=True,
-                        sampler=train_sampler
+                        sampler=train_sampler,
                         )
 
     val_loader = torch.utils.data.DataLoader(
                         datasets.CIFAR10(
                             valdir,
+                            train=False,
                             transform=transforms.Compose([
                                         transforms.Resize(256),
                                         transforms.CenterCrop(224),
