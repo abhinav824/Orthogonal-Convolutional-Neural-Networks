@@ -6,7 +6,7 @@ import numpy as np
 
 device = ("cuda" if torch.cuda.is_available() else "cpu")
 
-checkpoint = torch.load('model/resnet34_49')
+checkpoint = torch.load('/home/abhinav/my_projects/ocnn/Orthogonal-Convolutional-Neural-Networks/classification/model/resnet34_49')
 
 model = models.__dict__['resnet34']()
 
